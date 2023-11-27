@@ -24,10 +24,19 @@
         // $num = (float)"950";
         // var_dump($num);
 
-        $casado = True;
-        // var_dump($casado)
-        echo "O valor para casado é $casado"
+        // $casado = True;
+        // // var_dump($casado)
+        // echo "O valor para casado é $casado"
 
+        // $vet = [6, 9, "Maria", 3, 5];
+        // var_dump($vet)
+
+        class Pessoa {
+            private string $nome;
+            
+        }
+        $p = new Pessoa;
+        var_dump($p)
     ?>
 </body>
 

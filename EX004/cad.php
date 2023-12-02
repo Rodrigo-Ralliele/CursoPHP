@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado</title>
+    <title>Dados HTML</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-<header>
-    <h1>Resultado Do Processamento </h1>
-</header>
-
-    <main> 
-        <?php 
-        $n = $_GET ["nome"];
-        $s = $_GET ["sobrenome"];
-        echo "<p> É um Prazer te conhecer $n $s, Este é o Meu Site!";
-
-        ?>
-        <p><a href="javascript:history.go(-1)">Voltar </a></p>
-        
-    </main>
+    <?php 
+    $n =  $_GET ["nome"] ?? "[ERRO] ESCREVA SEU NOME ";
+    $s = $_GET ["sobrenome"] ?? "[[ERRO] ESCREVA SEU SOBRENOME]";
+    echo "<p> E um prazer te conhercer <strong>$n $s</strong>! Este é o meu Site!";
+    ?>
+<a href="javascript:history.go(-1)"><p>Voltar para página anterior</p></a>
 
 </body>
 </html>

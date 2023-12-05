@@ -34,7 +34,7 @@
 
         $dolar = $real / $cotação;
 
-        $padrao = numfmt_create("",NumberFormatter::CURRENCY);
+        $padrao =numfmt_create("pt-br",NumberFormatter::CURRENCY);
 
         echo "<p> Seus". numfmt_format_currency($padrao, $real, "BRL"). "equivalem a <strong>". numfmt_format_currency($padrao, $dolar, "USD")."</strong></p>";
         ?>

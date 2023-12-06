@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,7 @@
 <body>
     <main>
         <header>
-            <h1>Aalisador de Número Real</h1>
+            <h1>Aalisador de Número Real 2.0</h1>
         </header>
         <?php
 
@@ -34,11 +34,11 @@
 
         $dolar = $real / $cotação;
 
-        $padrao =numfmt_create("pt-br",NumberFormatter::CURRENCY);
+        $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
 
-        echo "<p> Seus". numfmt_format_currency($padrao, $real, "BRL"). "equivalem a <strong>". numfmt_format_currency($padrao, $dolar, "USD")."</strong></p>";
+        echo "<p> Seus R\$<strong>". number_format( $real, 2, ",", "."). "</strong></br>equivalem a US\$<strong>". number_format($dolar, 2, ",", ".")."</strong></p>";
         ?>
-        <button onclick="javascript:history.go(-1)">Voltar</button>;
+        <button onclick="javascript:history.go(-1)">Voltar</button>
     </main>
 </body>
 

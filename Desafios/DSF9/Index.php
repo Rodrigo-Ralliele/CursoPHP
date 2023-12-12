@@ -28,7 +28,7 @@
     $calcp2 = $n2 * $peso2;
     $calcp3 = $peso1 + $peso2;
     $calcp4 = $calcp + $calcp2;
-    $calcp5 = $calcp4 / $calcp3;
+    $calcp5 = $calcp3 / $calcp4;
 
     ?>
 
@@ -39,7 +39,7 @@
             </h1>
         </header>
 
-        <form action="<?php $_SERVER['PHP_SELF'] ?>">
+<form action="<?php $_SERVER['PHP_SELF']?>" method="get">
             <label for="n1">1°Valor</label>
             <input type="number" name="n1" id="n1">
 
@@ -54,21 +54,20 @@
 
             <input type="submit" value="Calcular Médias">
         </form>
+    </main>
         <section>
             <header>
                 <h1>Cálculo das Médias </h1>
             </header>
             <?php
             echo "<p>Analisando os valores<strong> $n1</strong> e <strong>$n2:</strong></p>";
+            
             echo "<p>A <strong>Média Aritmética simples </strong> entre os valores é igual a <strong>".number_format($calcsim, 2, ",")."</strong></p>";
+
             echo "<p>A <strong>Média Aritimética Ponderada</strong> com pesos $peso1 e $peso2 é igual a <strong>".number_format($calcp5, 2, ",")."</strong> </p>";
+
             ?>
         </section>
-
-        
-
-
-    </main>
 </body>
 
 </html>

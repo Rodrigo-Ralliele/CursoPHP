@@ -17,9 +17,10 @@
     <main>
 
         <?php 
-        $datanm = $_GET['datan'] ?? 0;
-        $anoescolha = $_GET['anoescolha'] ?? 0;
-        $calc = $anoescolha - $datanm ;
+        $atual = date("Y");
+        $datanm = $_GET['datan'] ?? 2000;
+        $anoescolha = $_GET['anoescolha'] ?? $atual;
+        
         ?>
 
         <header>
@@ -30,9 +31,9 @@
 
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="get">
                 <label for="datan">Em que ano você nasceu?</label>
-                <input type="number" name="datan" id="datan">
+                <input type="number" name="datan" id="datan" max="<?=$atual-1?>">
 
-                <label for="data" id="anoescolha">Quer saber sua idade em que ano? </label>
+                <label for="data" id="anoescolha">Quer saber sua idade em que ano? (Atualmente estamos em <strong><?=$atual?></strong>)</label>
                 <input type="number" name="anoescolha" id="anoescolha">
 
                 <input type="submit" value="Qual será minha idade?">
@@ -40,7 +41,11 @@
 
         <section>
             <header><h1>Resultado</h1></header>
-        <?php echo "Quem nasceu em $datanm vai ter <strong>$calc anos</strong> em $anoescolha! ";?></section>
+        <?php
+        $calc = $anoescolha - $datanm;
+        echo "Quem nasceu em $datanm vai ter <strong>$calc anos</strong> em $anoescolha! ";?>
+        
+    </section>
         
     </main>
 </body>
